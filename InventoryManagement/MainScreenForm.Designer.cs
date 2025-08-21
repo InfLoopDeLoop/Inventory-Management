@@ -2,7 +2,7 @@
 
 namespace InventoryManagement
 {
-    partial class MainScreen : Form
+    partial class MainScreenForm : Form
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,7 @@ namespace InventoryManagement
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainScreen));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainScreenForm));
             this.WindowLabel = new System.Windows.Forms.Label();
             this.AddPartButton = new System.Windows.Forms.Button();
             this.ModifyPartButton = new System.Windows.Forms.Button();
@@ -39,7 +39,19 @@ namespace InventoryManagement
             this.ModifyProductButton = new System.Windows.Forms.Button();
             this.DeleteProductButton = new System.Windows.Forms.Button();
             this.PartsTable = new System.Windows.Forms.ListView();
+            this.PartID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.PartName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.PartInventory = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.PartPrice = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.PartMin = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.PartMax = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ProductsTable = new System.Windows.Forms.ListView();
+            this.ProductID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.ProductName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.ProductInventory = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.ProductPrice = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.ProductMin = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.ProductMax = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.LeftTableLabel = new System.Windows.Forms.Label();
             this.RightTableLabel = new System.Windows.Forms.Label();
             this.ExitButton = new System.Windows.Forms.Button();
@@ -129,17 +141,63 @@ namespace InventoryManagement
             // PartsTable
             // 
             this.PartsTable.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.PartsTable.Columns.AddRange(new System.Windows.Forms.ColumnHeader[]{
+            this.PartID,
+            this.PartName,
+            this.PartInventory,
+            this.PartPrice,
+            this.PartMin,
+            this.PartMax});
             this.PartsTable.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PartsTable.HideSelection = false;
             this.PartsTable.Location = new System.Drawing.Point(12, 120);
             this.PartsTable.Name = "PartsTable";
             this.PartsTable.Size = new System.Drawing.Size(480, 240);
             this.PartsTable.TabIndex = 8;
-            this.PartsTable.UseCompatibleStateImageBehavior = false;
+            this.PartsTable.TileSize = new System.Drawing.Size(228, 30);
+            this.PartsTable.UseCompatibleStateImageBehavior = true;
+            this.PartsTable.View = System.Windows.Forms.View.Details;
+            // 
+            // PartID
+            // 
+            this.PartID.Text = "Part ID";
+            this.PartID.Width = 80;
+            // 
+            // PartName
+            // 
+            this.PartName.Text = "Name";
+            this.PartName.Width = 80;
+            // 
+            // PartInventory
+            // 
+            this.PartInventory.Text = "Inventory";
+            this.PartInventory.Width = 80;
+            // 
+            // PartPrice
+            // 
+            this.PartPrice.Text = "Price";
+            this.PartPrice.Width = 80;
+            // 
+            // PartMin
+            // 
+            this.PartMin.Text = "Min";
+            this.PartMin.Width = 80;
+            // 
+            // PartMax
+            // 
+            this.PartMax.Text = "Max";
+            this.PartMax.Width = 80;
             // 
             // ProductsTable
             // 
             this.ProductsTable.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ProductsTable.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.ProductID,
+            this.ProductName,
+            this.ProductInventory,
+            this.ProductPrice,
+            this.ProductMin,
+            this.ProductMax});
             this.ProductsTable.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ProductsTable.HideSelection = false;
             this.ProductsTable.Location = new System.Drawing.Point(504, 120);
@@ -147,6 +205,37 @@ namespace InventoryManagement
             this.ProductsTable.Size = new System.Drawing.Size(480, 240);
             this.ProductsTable.TabIndex = 9;
             this.ProductsTable.UseCompatibleStateImageBehavior = false;
+            this.ProductsTable.View = System.Windows.Forms.View.Details;
+            // 
+            // ProductID
+            // 
+            this.ProductID.Text = "Product ID";
+            this.ProductID.Width = 80;
+            // 
+            // ProductName
+            // 
+            this.ProductName.Text = "Name";
+            this.ProductName.Width = 80;
+            // 
+            // ProductInventory
+            // 
+            this.ProductInventory.Text = "Inventory";
+            this.ProductInventory.Width = 80;
+            // 
+            // ProductPrice
+            // 
+            this.ProductPrice.Text = "Price";
+            this.ProductPrice.Width = 80;
+            // 
+            // ProductMin
+            // 
+            this.ProductMin.Text = "Min";
+            this.ProductMin.Width = 80;
+            // 
+            // ProductMax
+            // 
+            this.ProductMax.Text = "Max";
+            this.ProductMax.Width = 80;
             // 
             // LeftTableLabel
             // 
@@ -220,7 +309,7 @@ namespace InventoryManagement
             this.RightSearchButton.Text = "Search";
             this.RightSearchButton.UseVisualStyleBackColor = true;
             // 
-            // MainScreen
+            // MainScreenForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -242,11 +331,11 @@ namespace InventoryManagement
             this.Controls.Add(this.AddPartButton);
             this.Controls.Add(this.WindowLabel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "MainScreen";
+            this.Name = "MainScreenForm";
             this.Text = "Main Screen";
             this.ResumeLayout(false);
             this.PerformLayout();
-
+            this.Load += new System.EventHandler(this.MainScreenForm_Load);
         }
 
         #endregion
@@ -266,6 +355,18 @@ namespace InventoryManagement
         private TextBox textBox2;
         private Button LeftSearchButton;
         private Button RightSearchButton;
+        private ColumnHeader PartID;
+        private ColumnHeader PartName;
+        private ColumnHeader PartInventory;
+        private ColumnHeader PartPrice;
+        private ColumnHeader PartMin;
+        private ColumnHeader PartMax;
+        private ColumnHeader ProductID;
+        private ColumnHeader ProductName;
+        private ColumnHeader ProductInventory;
+        private ColumnHeader ProductPrice;
+        private ColumnHeader ProductMin;
+        private ColumnHeader ProductMax;
     }
 }
 

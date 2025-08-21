@@ -1,6 +1,6 @@
 ﻿namespace InventoryManagement
 {
-    partial class AddPart
+    partial class ModifyPartForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,17 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddPart));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ModifyPartForm));
             this.WindowLabel = new System.Windows.Forms.Label();
             this.InHouseButton = new System.Windows.Forms.RadioButton();
             this.OutsourcedButton = new System.Windows.Forms.RadioButton();
-            this.textBox = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.IDTextBox = new System.Windows.Forms.TextBox();
+            this.NameTextBox = new System.Windows.Forms.TextBox();
+            this.InventoryTextBox = new System.Windows.Forms.TextBox();
+            this.PriceTextBox = new System.Windows.Forms.TextBox();
+            this.MinTextBox = new System.Windows.Forms.TextBox();
+            this.MachineIDTextBox = new System.Windows.Forms.TextBox();
+            this.MaxTextBox = new System.Windows.Forms.TextBox();
             this.MachineIDLabel = new System.Windows.Forms.Label();
             this.IDLabel = new System.Windows.Forms.Label();
             this.NameLabel = new System.Windows.Forms.Label();
@@ -48,8 +48,10 @@
             this.MaxLabel = new System.Windows.Forms.Label();
             this.InHousePanel = new System.Windows.Forms.Panel();
             this.OutsourcedPanel = new System.Windows.Forms.Panel();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.CompanyNameTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.CancelButtton = new System.Windows.Forms.Button();
+            this.SaveButton = new System.Windows.Forms.Button();
             this.InHousePanel.SuspendLayout();
             this.OutsourcedPanel.SuspendLayout();
             this.SuspendLayout();
@@ -60,9 +62,9 @@
             this.WindowLabel.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.WindowLabel.Location = new System.Drawing.Point(12, 9);
             this.WindowLabel.Name = "WindowLabel";
-            this.WindowLabel.Size = new System.Drawing.Size(114, 25);
+            this.WindowLabel.Size = new System.Drawing.Size(147, 25);
             this.WindowLabel.TabIndex = 2;
-            this.WindowLabel.Text = "Add Part";
+            this.WindowLabel.Text = "Modify Part";
             // 
             // InHouseButton
             // 
@@ -75,7 +77,6 @@
             this.InHouseButton.TabStop = true;
             this.InHouseButton.Text = "In-House";
             this.InHouseButton.UseVisualStyleBackColor = true;
-            this.InHouseButton.CheckedChanged += new System.EventHandler(this.InHouseButton_CheckedChanged);
             // 
             // OutsourcedButton
             // 
@@ -86,63 +87,62 @@
             this.OutsourcedButton.TabIndex = 4;
             this.OutsourcedButton.Text = "Outsourced";
             this.OutsourcedButton.UseVisualStyleBackColor = true;
-            this.OutsourcedButton.CheckedChanged += new System.EventHandler(this.OutsourcedButton_CheckedChanged);
             // 
-            // textBox
+            // IDTextBox
             // 
-            this.textBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox.Location = new System.Drawing.Point(140, 48);
-            this.textBox.Name = "textBox";
-            this.textBox.Size = new System.Drawing.Size(156, 20);
-            this.textBox.TabIndex = 14;
+            this.IDTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IDTextBox.Location = new System.Drawing.Point(140, 48);
+            this.IDTextBox.Name = "IDTextBox";
+            this.IDTextBox.Size = new System.Drawing.Size(156, 20);
+            this.IDTextBox.TabIndex = 14;
             // 
-            // textBox1
+            // NameTextBox
             // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Location = new System.Drawing.Point(140, 74);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(156, 20);
-            this.textBox1.TabIndex = 15;
+            this.NameTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.NameTextBox.Location = new System.Drawing.Point(140, 74);
+            this.NameTextBox.Name = "NameTextBox";
+            this.NameTextBox.Size = new System.Drawing.Size(156, 20);
+            this.NameTextBox.TabIndex = 15;
             // 
-            // textBox2
+            // InventoryTextBox
             // 
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox2.Location = new System.Drawing.Point(140, 100);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(156, 20);
-            this.textBox2.TabIndex = 16;
+            this.InventoryTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.InventoryTextBox.Location = new System.Drawing.Point(140, 100);
+            this.InventoryTextBox.Name = "InventoryTextBox";
+            this.InventoryTextBox.Size = new System.Drawing.Size(156, 20);
+            this.InventoryTextBox.TabIndex = 16;
             // 
-            // textBox3
+            // PriceTextBox
             // 
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox3.Location = new System.Drawing.Point(140, 126);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(156, 20);
-            this.textBox3.TabIndex = 17;
+            this.PriceTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.PriceTextBox.Location = new System.Drawing.Point(140, 126);
+            this.PriceTextBox.Name = "PriceTextBox";
+            this.PriceTextBox.Size = new System.Drawing.Size(156, 20);
+            this.PriceTextBox.TabIndex = 17;
             // 
-            // textBox4
+            // MinTextBox
             // 
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox4.Location = new System.Drawing.Point(140, 152);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(54, 20);
-            this.textBox4.TabIndex = 18;
+            this.MinTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.MinTextBox.Location = new System.Drawing.Point(140, 152);
+            this.MinTextBox.Name = "MinTextBox";
+            this.MinTextBox.Size = new System.Drawing.Size(54, 20);
+            this.MinTextBox.TabIndex = 18;
             // 
-            // textBox5
+            // MachineIDTextBox
             // 
-            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox5.Location = new System.Drawing.Point(113, 3);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(156, 20);
-            this.textBox5.TabIndex = 19;
+            this.MachineIDTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.MachineIDTextBox.Location = new System.Drawing.Point(113, 3);
+            this.MachineIDTextBox.Name = "MachineIDTextBox";
+            this.MachineIDTextBox.Size = new System.Drawing.Size(156, 20);
+            this.MachineIDTextBox.TabIndex = 19;
             // 
-            // textBox6
+            // MaxTextBox
             // 
-            this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox6.Location = new System.Drawing.Point(242, 152);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(54, 20);
-            this.textBox6.TabIndex = 20;
+            this.MaxTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.MaxTextBox.Location = new System.Drawing.Point(242, 152);
+            this.MaxTextBox.Name = "MaxTextBox";
+            this.MaxTextBox.Size = new System.Drawing.Size(54, 20);
+            this.MaxTextBox.TabIndex = 20;
             // 
             // MachineIDLabel
             // 
@@ -216,7 +216,7 @@
             // 
             // InHousePanel
             // 
-            this.InHousePanel.Controls.Add(this.textBox5);
+            this.InHousePanel.Controls.Add(this.MachineIDTextBox);
             this.InHousePanel.Controls.Add(this.MachineIDLabel);
             this.InHousePanel.Location = new System.Drawing.Point(27, 178);
             this.InHousePanel.Name = "InHousePanel";
@@ -225,20 +225,20 @@
             // 
             // OutsourcedPanel
             // 
-            this.OutsourcedPanel.Controls.Add(this.textBox7);
+            this.OutsourcedPanel.Controls.Add(this.CompanyNameTextBox);
             this.OutsourcedPanel.Controls.Add(this.label1);
             this.OutsourcedPanel.Location = new System.Drawing.Point(1, 179);
             this.OutsourcedPanel.Name = "OutsourcedPanel";
             this.OutsourcedPanel.Size = new System.Drawing.Size(322, 25);
             this.OutsourcedPanel.TabIndex = 30;
             // 
-            // textBox7
+            // CompanyNameTextBox
             // 
-            this.textBox7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox7.Location = new System.Drawing.Point(139, 2);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(156, 20);
-            this.textBox7.TabIndex = 19;
+            this.CompanyNameTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.CompanyNameTextBox.Location = new System.Drawing.Point(139, 2);
+            this.CompanyNameTextBox.Name = "CompanyNameTextBox";
+            this.CompanyNameTextBox.Size = new System.Drawing.Size(156, 20);
+            this.CompanyNameTextBox.TabIndex = 19;
             // 
             // label1
             // 
@@ -250,31 +250,55 @@
             this.label1.TabIndex = 28;
             this.label1.Text = "Company Name:";
             // 
-            // AddPart
+            // CancelButtton
+            // 
+            this.CancelButtton.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.CancelButtton.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CancelButtton.Location = new System.Drawing.Point(140, 210);
+            this.CancelButtton.Name = "CancelButtton";
+            this.CancelButtton.Size = new System.Drawing.Size(75, 23);
+            this.CancelButtton.TabIndex = 31;
+            this.CancelButtton.Text = "Cancel";
+            this.CancelButtton.UseVisualStyleBackColor = true;
+            // 
+            // SaveButton
+            // 
+            this.SaveButton.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.SaveButton.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SaveButton.Location = new System.Drawing.Point(221, 210);
+            this.SaveButton.Name = "SaveButton";
+            this.SaveButton.Size = new System.Drawing.Size(75, 23);
+            this.SaveButton.TabIndex = 32;
+            this.SaveButton.Text = "Save";
+            this.SaveButton.UseVisualStyleBackColor = true;
+            // 
+            // ModifyPartForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(304, 209);
-            this.Controls.Add(this.OutsourcedPanel);
-            this.Controls.Add(this.InHousePanel);
+            this.ClientSize = new System.Drawing.Size(304, 241);
+            this.Controls.Add(this.SaveButton);
+            this.Controls.Add(this.CancelButtton);
             this.Controls.Add(this.MaxLabel);
             this.Controls.Add(this.MinLabel);
             this.Controls.Add(this.PriceCostLabel);
             this.Controls.Add(this.InventoryLabel);
             this.Controls.Add(this.NameLabel);
             this.Controls.Add(this.IDLabel);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.textBox);
+            this.Controls.Add(this.MaxTextBox);
+            this.Controls.Add(this.MinTextBox);
+            this.Controls.Add(this.PriceTextBox);
+            this.Controls.Add(this.InventoryTextBox);
+            this.Controls.Add(this.NameTextBox);
+            this.Controls.Add(this.IDTextBox);
             this.Controls.Add(this.OutsourcedButton);
             this.Controls.Add(this.InHouseButton);
             this.Controls.Add(this.WindowLabel);
+            this.Controls.Add(this.InHousePanel);
+            this.Controls.Add(this.OutsourcedPanel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "AddPart";
-            this.Text = "Add Part Screen";
+            this.Name = "ModifyPartForm";
+            this.Text = "Modify Part Screen";
             this.InHousePanel.ResumeLayout(false);
             this.InHousePanel.PerformLayout();
             this.OutsourcedPanel.ResumeLayout(false);
@@ -289,13 +313,13 @@
         private System.Windows.Forms.Label WindowLabel;
         private System.Windows.Forms.RadioButton InHouseButton;
         private System.Windows.Forms.RadioButton OutsourcedButton;
-        private System.Windows.Forms.TextBox textBox;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox IDTextBox;
+        private System.Windows.Forms.TextBox NameTextBox;
+        private System.Windows.Forms.TextBox InventoryTextBox;
+        private System.Windows.Forms.TextBox PriceTextBox;
+        private System.Windows.Forms.TextBox MinTextBox;
+        private System.Windows.Forms.TextBox MachineIDTextBox;
+        private System.Windows.Forms.TextBox MaxTextBox;
         private System.Windows.Forms.Label IDLabel;
         private System.Windows.Forms.Label NameLabel;
         private System.Windows.Forms.Label InventoryLabel;
@@ -305,7 +329,9 @@
         private System.Windows.Forms.Label MachineIDLabel;
         private System.Windows.Forms.Panel InHousePanel;
         private System.Windows.Forms.Panel OutsourcedPanel;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox CompanyNameTextBox;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button CancelButtton;
+        private System.Windows.Forms.Button SaveButton;
     }
 }
