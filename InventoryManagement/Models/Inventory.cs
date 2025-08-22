@@ -19,7 +19,7 @@ namespace InventoryManagement.Models
             }
             Products.Add(product);
         }
-        public static bool RemoveProduct(int productID)
+        public static bool DeleteProduct(int productID)
         {
             if (Products == null || Products.Count == 0)
             {
@@ -95,11 +95,20 @@ namespace InventoryManagement.Models
             var partToUpdate = AllParts.FirstOrDefault(p => p.PartID == partID);
             if (partToUpdate != null)
             {
+                partToUpdate.PartID = newPart.PartID;
                 partToUpdate.Name = newPart.Name;
                 partToUpdate.Price = newPart.Price;
                 partToUpdate.InStock = newPart.InStock;
                 partToUpdate.Min = newPart.Min;
                 partToUpdate.Max = newPart.Max;
+            }
+        }
+
+        public static void OrderParts()
+        {
+            if (AllParts != null)
+            {
+                AllParts = new BindingList<Part>(AllParts.OrderBy(p => p.PartID).ToList());
             }
         }
     }

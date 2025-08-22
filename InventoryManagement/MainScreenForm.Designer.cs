@@ -55,10 +55,8 @@ namespace InventoryManagement
             this.LeftTableLabel = new System.Windows.Forms.Label();
             this.RightTableLabel = new System.Windows.Forms.Label();
             this.ExitButton = new System.Windows.Forms.Button();
-            this.textBox = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.LeftSearchButton = new System.Windows.Forms.Button();
-            this.RightSearchButton = new System.Windows.Forms.Button();
+            this.PartsTableSearchBar = new System.Windows.Forms.TextBox();
+            this.PoductsTableSearchBar = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // WindowLabel
@@ -93,6 +91,7 @@ namespace InventoryManagement
             this.ModifyPartButton.TabIndex = 3;
             this.ModifyPartButton.Text = "Modify";
             this.ModifyPartButton.UseVisualStyleBackColor = true;
+            this.ModifyPartButton.Click += new System.EventHandler(this.ModifyPartButton_Click);
             // 
             // DeletePartButtton
             // 
@@ -104,6 +103,7 @@ namespace InventoryManagement
             this.DeletePartButtton.TabIndex = 4;
             this.DeletePartButtton.Text = "Delete";
             this.DeletePartButtton.UseVisualStyleBackColor = true;
+            this.DeletePartButtton.Click += new System.EventHandler(this.DeletePartButtton_Click);
             // 
             // AddProductButton
             // 
@@ -141,7 +141,7 @@ namespace InventoryManagement
             // PartsTable
             // 
             this.PartsTable.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.PartsTable.Columns.AddRange(new System.Windows.Forms.ColumnHeader[]{
+            this.PartsTable.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.PartID,
             this.PartName,
             this.PartInventory,
@@ -149,13 +149,15 @@ namespace InventoryManagement
             this.PartMin,
             this.PartMax});
             this.PartsTable.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PartsTable.FullRowSelect = true;
             this.PartsTable.HideSelection = false;
             this.PartsTable.Location = new System.Drawing.Point(12, 120);
+            this.PartsTable.MultiSelect = false;
             this.PartsTable.Name = "PartsTable";
             this.PartsTable.Size = new System.Drawing.Size(480, 240);
             this.PartsTable.TabIndex = 8;
             this.PartsTable.TileSize = new System.Drawing.Size(228, 30);
-            this.PartsTable.UseCompatibleStateImageBehavior = true;
+            this.PartsTable.UseCompatibleStateImageBehavior = false;
             this.PartsTable.View = System.Windows.Forms.View.Details;
             // 
             // PartID
@@ -271,53 +273,31 @@ namespace InventoryManagement
             this.ExitButton.UseVisualStyleBackColor = true;
             this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
             // 
-            // textBox
+            // PartsTableSearchBar
             // 
-            this.textBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox.Location = new System.Drawing.Point(255, 94);
-            this.textBox.Name = "textBox";
-            this.textBox.Size = new System.Drawing.Size(156, 20);
-            this.textBox.TabIndex = 13;
+            this.PartsTableSearchBar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.PartsTableSearchBar.Location = new System.Drawing.Point(255, 94);
+            this.PartsTableSearchBar.Name = "PartsTableSearchBar";
+            this.PartsTableSearchBar.Size = new System.Drawing.Size(237, 20);
+            this.PartsTableSearchBar.TabIndex = 13;
+            this.PartsTableSearchBar.TextChanged += new System.EventHandler(this.PartsTableSearchBar_TextChanged);
             // 
-            // textBox2
+            // PoductsTableSearchBar
             // 
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox2.Location = new System.Drawing.Point(747, 94);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(156, 20);
-            this.textBox2.TabIndex = 14;
-            // 
-            // LeftSearchButton
-            // 
-            this.LeftSearchButton.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.LeftSearchButton.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LeftSearchButton.Location = new System.Drawing.Point(417, 94);
-            this.LeftSearchButton.Name = "LeftSearchButton";
-            this.LeftSearchButton.Size = new System.Drawing.Size(75, 23);
-            this.LeftSearchButton.TabIndex = 15;
-            this.LeftSearchButton.Text = "Search";
-            this.LeftSearchButton.UseVisualStyleBackColor = true;
-            // 
-            // RightSearchButton
-            // 
-            this.RightSearchButton.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.RightSearchButton.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RightSearchButton.Location = new System.Drawing.Point(909, 91);
-            this.RightSearchButton.Name = "RightSearchButton";
-            this.RightSearchButton.Size = new System.Drawing.Size(75, 23);
-            this.RightSearchButton.TabIndex = 16;
-            this.RightSearchButton.Text = "Search";
-            this.RightSearchButton.UseVisualStyleBackColor = true;
+            this.PoductsTableSearchBar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.PoductsTableSearchBar.Location = new System.Drawing.Point(747, 94);
+            this.PoductsTableSearchBar.Name = "PoductsTableSearchBar";
+            this.PoductsTableSearchBar.Size = new System.Drawing.Size(237, 20);
+            this.PoductsTableSearchBar.TabIndex = 14;
+            this.PoductsTableSearchBar.TextChanged += new System.EventHandler(this.PoductsTableSearchBar_TextChanged);
             // 
             // MainScreenForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(996, 401);
-            this.Controls.Add(this.RightSearchButton);
-            this.Controls.Add(this.LeftSearchButton);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox);
+            this.Controls.Add(this.PoductsTableSearchBar);
+            this.Controls.Add(this.PartsTableSearchBar);
             this.Controls.Add(this.ExitButton);
             this.Controls.Add(this.RightTableLabel);
             this.Controls.Add(this.LeftTableLabel);
@@ -335,7 +315,7 @@ namespace InventoryManagement
             this.Text = "Main Screen";
             this.ResumeLayout(false);
             this.PerformLayout();
-            this.Load += new System.EventHandler(this.MainScreenForm_Load);
+
         }
 
         #endregion
@@ -351,10 +331,8 @@ namespace InventoryManagement
         private Label LeftTableLabel;
         private Label RightTableLabel;
         private Button ExitButton;
-        private TextBox textBox;
-        private TextBox textBox2;
-        private Button LeftSearchButton;
-        private Button RightSearchButton;
+        private TextBox PartsTableSearchBar;
+        private TextBox PoductsTableSearchBar;
         private ColumnHeader PartID;
         private ColumnHeader PartName;
         private ColumnHeader PartInventory;
