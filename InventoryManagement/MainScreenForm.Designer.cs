@@ -115,6 +115,7 @@ namespace InventoryManagement
             this.AddProductButton.TabIndex = 5;
             this.AddProductButton.Text = "Add";
             this.AddProductButton.UseVisualStyleBackColor = true;
+            this.AddProductButton.Click += new System.EventHandler(this.AddProductButton_Click);
             // 
             // ModifyProductButton
             // 
@@ -126,6 +127,7 @@ namespace InventoryManagement
             this.ModifyProductButton.TabIndex = 6;
             this.ModifyProductButton.Text = "Modify";
             this.ModifyProductButton.UseVisualStyleBackColor = true;
+            this.ModifyProductButton.Click += new System.EventHandler(this.ModifyProductButton_Click);
             // 
             // DeleteProductButton
             // 
@@ -137,6 +139,7 @@ namespace InventoryManagement
             this.DeleteProductButton.TabIndex = 7;
             this.DeleteProductButton.Text = "Delete";
             this.DeleteProductButton.UseVisualStyleBackColor = true;
+            this.DeleteProductButton.Click += new System.EventHandler(this.DeleteProductButton_Click);
             // 
             // PartsTable
             // 
@@ -276,18 +279,18 @@ namespace InventoryManagement
             // PartsTableSearchBar
             // 
             this.PartsTableSearchBar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.PartsTableSearchBar.Location = new System.Drawing.Point(255, 94);
+            this.PartsTableSearchBar.Location = new System.Drawing.Point(336, 94);
             this.PartsTableSearchBar.Name = "PartsTableSearchBar";
-            this.PartsTableSearchBar.Size = new System.Drawing.Size(237, 20);
+            this.PartsTableSearchBar.Size = new System.Drawing.Size(156, 20);
             this.PartsTableSearchBar.TabIndex = 13;
             this.PartsTableSearchBar.TextChanged += new System.EventHandler(this.PartsTableSearchBar_TextChanged);
             // 
             // PoductsTableSearchBar
             // 
             this.PoductsTableSearchBar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.PoductsTableSearchBar.Location = new System.Drawing.Point(747, 94);
+            this.PoductsTableSearchBar.Location = new System.Drawing.Point(828, 94);
             this.PoductsTableSearchBar.Name = "PoductsTableSearchBar";
-            this.PoductsTableSearchBar.Size = new System.Drawing.Size(237, 20);
+            this.PoductsTableSearchBar.Size = new System.Drawing.Size(156, 20);
             this.PoductsTableSearchBar.TabIndex = 14;
             this.PoductsTableSearchBar.TextChanged += new System.EventHandler(this.PoductsTableSearchBar_TextChanged);
             // 

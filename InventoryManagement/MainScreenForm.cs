@@ -21,20 +21,18 @@ namespace InventoryManagement
 
         private void RefreshPartsView()
         {
-            if (Inventory.AllParts != null)
-            {
-                PartsTable.Items.Clear();
+            if (Inventory.AllParts == null) return;
+            PartsTable.Items.Clear();
 
-                foreach (var part in Inventory.AllParts)
-                {
-                    ListViewItem item = new ListViewItem(part.PartID.ToString());
-                    item.SubItems.Add(part.Name);
-                    item.SubItems.Add(part.InStock.ToString());
-                    item.SubItems.Add(part.Price.ToString("C"));
-                    item.SubItems.Add(part.Min.ToString());
-                    item.SubItems.Add(part.Max.ToString());
-                    PartsTable.Items.Add(item);
-                }
+            foreach (var part in Inventory.AllParts)
+            {
+                ListViewItem item = new ListViewItem(part.PartID.ToString());
+                item.SubItems.Add(part.Name);
+                item.SubItems.Add(part.InStock.ToString());
+                item.SubItems.Add(part.Price.ToString("C"));
+                item.SubItems.Add(part.Min.ToString());
+                item.SubItems.Add(part.Max.ToString());
+                PartsTable.Items.Add(item);
             }
         }
 
@@ -43,11 +41,6 @@ namespace InventoryManagement
             AddPartForm addPartForm = new AddPartForm();
             addPartForm.ShowDialog();
             RefreshPartsView();
-        }
-
-        private void ExitButton_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
         }
 
         private void ModifyPartButton_Click(object sender, EventArgs e)
@@ -116,9 +109,62 @@ namespace InventoryManagement
             }
         }
 
+        private void RefreshProductsView()
+        {
+            if (Inventory.Products == null) return;
+            ProductsTable.Items.Clear();
+            foreach (var product in Inventory.Products)
+            {
+                ListViewItem item = new ListViewItem(product.ProductID.ToString());
+                item.SubItems.Add(product.Name);
+                item.SubItems.Add(product.InStock.ToString());
+                item.SubItems.Add(product.Price.ToString("C"));
+                item.SubItems.Add(product.Min.ToString());
+                item.SubItems.Add(product.Max.ToString());
+                ProductsTable.Items.Add(item);
+            }
+        }
+
+        private void AddProductButton_Click(object sender, EventArgs e)
+        {
+            if (Inventory.AllParts == null || Inventory.AllParts.Count == 0)
+            {
+                MessageBox.Show("You must have at least one part in inventory to add a product.");
+                return;
+            }
+            AddProductForm addProductForm = new AddProductForm();
+            addProductForm.ShowDialog();
+            RefreshProductsView();
+        }
+
+        private void ModifyProductButton_Click(object sender, EventArgs e)
+        {
+            if (ProductsTable.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("Please select a product to modify.");
+                return;
+            }
+            ListViewItem selectedRow = ProductsTable.SelectedItems[0];
+            int productID = int.Parse(selectedRow.SubItems[0].Text);
+            Product selectedProduct = Inventory.LookupProduct(productID);
+            ModifyProductForm modifyProductForm = new ModifyProductForm(selectedProduct);
+            modifyProductForm.ShowDialog();
+            RefreshProductsView();
+        }
+
+        private void DeleteProductButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void PoductsTableSearchBar_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void ExitButton_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 

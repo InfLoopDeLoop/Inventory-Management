@@ -9,7 +9,8 @@ namespace InventoryManagement.Models
 {
     public class Product
     {
-        public BindingList<Part> AssociatedParts { get; set; }
+        public BindingList<Part> AssociatedParts = new BindingList<Part>();
+
         public int ProductID { get; set; }
         public string Name { get; set; }
         public decimal Price { get; set; }

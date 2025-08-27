@@ -43,7 +43,7 @@
             this.InHousePanel = new System.Windows.Forms.Panel();
             this.OutsourcedPanel = new System.Windows.Forms.Panel();
             this.CompanyNameTextBox = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.CompanyNameLabel = new System.Windows.Forms.Label();
             this.CancelButtton = new System.Windows.Forms.Button();
             this.SaveButton = new System.Windows.Forms.Button();
             this.InHousePanel.SuspendLayout();
@@ -221,7 +221,7 @@
             // OutsourcedPanel
             // 
             this.OutsourcedPanel.Controls.Add(this.CompanyNameTextBox);
-            this.OutsourcedPanel.Controls.Add(this.label1);
+            this.OutsourcedPanel.Controls.Add(this.CompanyNameLabel);
             this.OutsourcedPanel.Location = new System.Drawing.Point(1, 179);
             this.OutsourcedPanel.Name = "OutsourcedPanel";
             this.OutsourcedPanel.Size = new System.Drawing.Size(322, 25);
@@ -235,15 +235,15 @@
             this.CompanyNameTextBox.Size = new System.Drawing.Size(156, 20);
             this.CompanyNameTextBox.TabIndex = 19;
             // 
-            // label1
+            // CompanyNameLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(6, 2);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(127, 16);
-            this.label1.TabIndex = 28;
-            this.label1.Text = "Company Name:";
+            this.CompanyNameLabel.AutoSize = true;
+            this.CompanyNameLabel.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CompanyNameLabel.Location = new System.Drawing.Point(6, 2);
+            this.CompanyNameLabel.Name = "CompanyNameLabel";
+            this.CompanyNameLabel.Size = new System.Drawing.Size(127, 16);
+            this.CompanyNameLabel.TabIndex = 28;
+            this.CompanyNameLabel.Text = "Company Name:";
             // 
             // CancelButtton
             // 
@@ -325,7 +325,7 @@
         private System.Windows.Forms.Panel InHousePanel;
         private System.Windows.Forms.Panel OutsourcedPanel;
         private System.Windows.Forms.TextBox CompanyNameTextBox;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label CompanyNameLabel;
         private System.Windows.Forms.Button CancelButtton;
         private System.Windows.Forms.Button SaveButton;
     }
