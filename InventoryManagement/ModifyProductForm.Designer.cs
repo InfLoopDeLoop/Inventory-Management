@@ -41,28 +41,28 @@
             this.IDLabel = new System.Windows.Forms.Label();
             this.MaxTextBox = new System.Windows.Forms.TextBox();
             this.MinTextBox = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.PriceTextBox = new System.Windows.Forms.TextBox();
+            this.InventoryTextBox = new System.Windows.Forms.TextBox();
+            this.NameTextBox = new System.Windows.Forms.TextBox();
             this.IDTextBox = new System.Windows.Forms.TextBox();
-            this.AssociatedPartsTableSearchBar = new System.Windows.Forms.TextBox();
-            this.CandidatePartsTableSearchBar = new System.Windows.Forms.TextBox();
+            this.AssociatedPartsSearchBar = new System.Windows.Forms.TextBox();
+            this.CandidateTableSearchBar = new System.Windows.Forms.TextBox();
             this.BottomTableLabel = new System.Windows.Forms.Label();
             this.TopTableLabel = new System.Windows.Forms.Label();
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.PartsTable = new System.Windows.Forms.ListView();
-            this.PartID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.PartName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.PartInventory = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.PartPrice = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.PartMin = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.PartMax = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.AssociatedTable = new System.Windows.Forms.ListView();
+            this.BottomID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.BottomName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.BottomInventory = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.BottomPrice = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.BottomMin = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.BottomMax = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.CandidateTable = new System.Windows.Forms.ListView();
+            this.TopID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.TopName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.TopInventory = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.TopPrice = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.TopMin = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.TopMax = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.WindowLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -76,6 +76,7 @@
             this.DeletePartButton.TabIndex = 58;
             this.DeletePartButton.Text = "Delete";
             this.DeletePartButton.UseVisualStyleBackColor = true;
+            this.DeletePartButton.Click += new System.EventHandler(this.DeletePartButton_Click);
             // 
             // SaveButton
             // 
@@ -87,6 +88,7 @@
             this.SaveButton.TabIndex = 57;
             this.SaveButton.Text = "Save";
             this.SaveButton.UseVisualStyleBackColor = true;
+            this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
             // 
             // CancelButton
             // 
@@ -110,6 +112,7 @@
             this.AddPartButtton.TabIndex = 55;
             this.AddPartButtton.Text = "Add";
             this.AddPartButtton.UseVisualStyleBackColor = true;
+            this.AddPartButtton.Click += new System.EventHandler(this.AddPartButtton_Click);
             // 
             // MaxLabel
             // 
@@ -187,29 +190,29 @@
             this.MinTextBox.Size = new System.Drawing.Size(54, 20);
             this.MinTextBox.TabIndex = 47;
             // 
-            // textBox3
+            // PriceTextBox
             // 
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox3.Location = new System.Drawing.Point(106, 319);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(156, 20);
-            this.textBox3.TabIndex = 46;
+            this.PriceTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.PriceTextBox.Location = new System.Drawing.Point(106, 319);
+            this.PriceTextBox.Name = "PriceTextBox";
+            this.PriceTextBox.Size = new System.Drawing.Size(156, 20);
+            this.PriceTextBox.TabIndex = 46;
             // 
-            // textBox2
+            // InventoryTextBox
             // 
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox2.Location = new System.Drawing.Point(106, 293);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(156, 20);
-            this.textBox2.TabIndex = 45;
+            this.InventoryTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.InventoryTextBox.Location = new System.Drawing.Point(106, 293);
+            this.InventoryTextBox.Name = "InventoryTextBox";
+            this.InventoryTextBox.Size = new System.Drawing.Size(156, 20);
+            this.InventoryTextBox.TabIndex = 45;
             // 
-            // textBox1
+            // NameTextBox
             // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Location = new System.Drawing.Point(106, 267);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(156, 20);
-            this.textBox1.TabIndex = 44;
+            this.NameTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.NameTextBox.Location = new System.Drawing.Point(106, 267);
+            this.NameTextBox.Name = "NameTextBox";
+            this.NameTextBox.Size = new System.Drawing.Size(156, 20);
+            this.NameTextBox.TabIndex = 44;
             // 
             // IDTextBox
             // 
@@ -219,21 +222,21 @@
             this.IDTextBox.Size = new System.Drawing.Size(156, 20);
             this.IDTextBox.TabIndex = 43;
             // 
-            // AssociatedPartsTableSearchBar
+            // AssociatedPartsSearchBar
             // 
-            this.AssociatedPartsTableSearchBar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.AssociatedPartsTableSearchBar.Location = new System.Drawing.Point(632, 316);
-            this.AssociatedPartsTableSearchBar.Name = "AssociatedPartsTableSearchBar";
-            this.AssociatedPartsTableSearchBar.Size = new System.Drawing.Size(156, 20);
-            this.AssociatedPartsTableSearchBar.TabIndex = 42;
+            this.AssociatedPartsSearchBar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.AssociatedPartsSearchBar.Location = new System.Drawing.Point(632, 316);
+            this.AssociatedPartsSearchBar.Name = "AssociatedPartsSearchBar";
+            this.AssociatedPartsSearchBar.Size = new System.Drawing.Size(156, 20);
+            this.AssociatedPartsSearchBar.TabIndex = 42;
             // 
-            // CandidatePartsTableSearchBar
+            // CandidateTableSearchBar
             // 
-            this.CandidatePartsTableSearchBar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.CandidatePartsTableSearchBar.Location = new System.Drawing.Point(632, 12);
-            this.CandidatePartsTableSearchBar.Name = "CandidatePartsTableSearchBar";
-            this.CandidatePartsTableSearchBar.Size = new System.Drawing.Size(156, 20);
-            this.CandidatePartsTableSearchBar.TabIndex = 41;
+            this.CandidateTableSearchBar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.CandidateTableSearchBar.Location = new System.Drawing.Point(632, 12);
+            this.CandidateTableSearchBar.Name = "CandidateTableSearchBar";
+            this.CandidateTableSearchBar.Size = new System.Drawing.Size(156, 20);
+            this.CandidateTableSearchBar.TabIndex = 41;
             // 
             // BottomTableLabel
             // 
@@ -255,109 +258,109 @@
             this.TopTableLabel.TabIndex = 39;
             this.TopTableLabel.Text = "Candidate Parts";
             // 
-            // listView1
+            // AssociatedTable
             // 
-            this.listView1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader3,
-            this.columnHeader4,
-            this.columnHeader5,
-            this.columnHeader6});
-            this.listView1.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listView1.FullRowSelect = true;
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(308, 342);
-            this.listView1.MultiSelect = false;
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(480, 240);
-            this.listView1.TabIndex = 38;
-            this.listView1.TileSize = new System.Drawing.Size(228, 30);
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
+            this.AssociatedTable.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.AssociatedTable.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.BottomID,
+            this.BottomName,
+            this.BottomInventory,
+            this.BottomPrice,
+            this.BottomMin,
+            this.BottomMax});
+            this.AssociatedTable.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AssociatedTable.FullRowSelect = true;
+            this.AssociatedTable.HideSelection = false;
+            this.AssociatedTable.Location = new System.Drawing.Point(308, 342);
+            this.AssociatedTable.MultiSelect = false;
+            this.AssociatedTable.Name = "AssociatedTable";
+            this.AssociatedTable.Size = new System.Drawing.Size(480, 240);
+            this.AssociatedTable.TabIndex = 38;
+            this.AssociatedTable.TileSize = new System.Drawing.Size(228, 30);
+            this.AssociatedTable.UseCompatibleStateImageBehavior = false;
+            this.AssociatedTable.View = System.Windows.Forms.View.Details;
             // 
-            // columnHeader1
+            // BottomID
             // 
-            this.columnHeader1.Text = "Part ID";
-            this.columnHeader1.Width = 80;
+            this.BottomID.Text = "Part ID";
+            this.BottomID.Width = 80;
             // 
-            // columnHeader2
+            // BottomName
             // 
-            this.columnHeader2.Text = "Name";
-            this.columnHeader2.Width = 80;
+            this.BottomName.Text = "Name";
+            this.BottomName.Width = 80;
             // 
-            // columnHeader3
+            // BottomInventory
             // 
-            this.columnHeader3.Text = "Inventory";
-            this.columnHeader3.Width = 80;
+            this.BottomInventory.Text = "Inventory";
+            this.BottomInventory.Width = 80;
             // 
-            // columnHeader4
+            // BottomPrice
             // 
-            this.columnHeader4.Text = "Price";
-            this.columnHeader4.Width = 80;
+            this.BottomPrice.Text = "Price";
+            this.BottomPrice.Width = 80;
             // 
-            // columnHeader5
+            // BottomMin
             // 
-            this.columnHeader5.Text = "Min";
-            this.columnHeader5.Width = 80;
+            this.BottomMin.Text = "Min";
+            this.BottomMin.Width = 80;
             // 
-            // columnHeader6
+            // BottomMax
             // 
-            this.columnHeader6.Text = "Max";
-            this.columnHeader6.Width = 80;
+            this.BottomMax.Text = "Max";
+            this.BottomMax.Width = 80;
             // 
-            // PartsTable
+            // CandidateTable
             // 
-            this.PartsTable.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.PartsTable.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.PartID,
-            this.PartName,
-            this.PartInventory,
-            this.PartPrice,
-            this.PartMin,
-            this.PartMax});
-            this.PartsTable.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PartsTable.FullRowSelect = true;
-            this.PartsTable.HideSelection = false;
-            this.PartsTable.Location = new System.Drawing.Point(308, 38);
-            this.PartsTable.MultiSelect = false;
-            this.PartsTable.Name = "PartsTable";
-            this.PartsTable.Size = new System.Drawing.Size(480, 240);
-            this.PartsTable.TabIndex = 37;
-            this.PartsTable.TileSize = new System.Drawing.Size(228, 30);
-            this.PartsTable.UseCompatibleStateImageBehavior = false;
-            this.PartsTable.View = System.Windows.Forms.View.Details;
+            this.CandidateTable.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.CandidateTable.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.TopID,
+            this.TopName,
+            this.TopInventory,
+            this.TopPrice,
+            this.TopMin,
+            this.TopMax});
+            this.CandidateTable.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CandidateTable.FullRowSelect = true;
+            this.CandidateTable.HideSelection = false;
+            this.CandidateTable.Location = new System.Drawing.Point(308, 38);
+            this.CandidateTable.MultiSelect = false;
+            this.CandidateTable.Name = "CandidateTable";
+            this.CandidateTable.Size = new System.Drawing.Size(480, 240);
+            this.CandidateTable.TabIndex = 37;
+            this.CandidateTable.TileSize = new System.Drawing.Size(228, 30);
+            this.CandidateTable.UseCompatibleStateImageBehavior = false;
+            this.CandidateTable.View = System.Windows.Forms.View.Details;
             // 
-            // PartID
+            // TopID
             // 
-            this.PartID.Text = "Part ID";
-            this.PartID.Width = 80;
+            this.TopID.Text = "Part ID";
+            this.TopID.Width = 80;
             // 
-            // PartName
+            // TopName
             // 
-            this.PartName.Text = "Name";
-            this.PartName.Width = 80;
+            this.TopName.Text = "Name";
+            this.TopName.Width = 80;
             // 
-            // PartInventory
+            // TopInventory
             // 
-            this.PartInventory.Text = "Inventory";
-            this.PartInventory.Width = 80;
+            this.TopInventory.Text = "Inventory";
+            this.TopInventory.Width = 80;
             // 
-            // PartPrice
+            // TopPrice
             // 
-            this.PartPrice.Text = "Price";
-            this.PartPrice.Width = 80;
+            this.TopPrice.Text = "Price";
+            this.TopPrice.Width = 80;
             // 
-            // PartMin
+            // TopMin
             // 
-            this.PartMin.Text = "Min";
-            this.PartMin.Width = 80;
+            this.TopMin.Text = "Min";
+            this.TopMin.Width = 80;
             // 
-            // PartMax
+            // TopMax
             // 
-            this.PartMax.Text = "Max";
-            this.PartMax.Width = 80;
+            this.TopMax.Text = "Max";
+            this.TopMax.Width = 80;
             // 
             // WindowLabel
             // 
@@ -386,20 +389,21 @@
             this.Controls.Add(this.IDLabel);
             this.Controls.Add(this.MaxTextBox);
             this.Controls.Add(this.MinTextBox);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.PriceTextBox);
+            this.Controls.Add(this.InventoryTextBox);
+            this.Controls.Add(this.NameTextBox);
             this.Controls.Add(this.IDTextBox);
-            this.Controls.Add(this.AssociatedPartsTableSearchBar);
-            this.Controls.Add(this.CandidatePartsTableSearchBar);
+            this.Controls.Add(this.AssociatedPartsSearchBar);
+            this.Controls.Add(this.CandidateTableSearchBar);
             this.Controls.Add(this.BottomTableLabel);
             this.Controls.Add(this.TopTableLabel);
-            this.Controls.Add(this.listView1);
-            this.Controls.Add(this.PartsTable);
+            this.Controls.Add(this.AssociatedTable);
+            this.Controls.Add(this.CandidateTable);
             this.Controls.Add(this.WindowLabel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ModifyProductForm";
             this.Text = "Modify Product Screen";
+            this.Load += new System.EventHandler(this.ModifyProductForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -419,28 +423,28 @@
         private System.Windows.Forms.Label IDLabel;
         private System.Windows.Forms.TextBox MaxTextBox;
         private System.Windows.Forms.TextBox MinTextBox;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox PriceTextBox;
+        private System.Windows.Forms.TextBox InventoryTextBox;
+        private System.Windows.Forms.TextBox NameTextBox;
         private System.Windows.Forms.TextBox IDTextBox;
-        private System.Windows.Forms.TextBox AssociatedPartsTableSearchBar;
-        private System.Windows.Forms.TextBox CandidatePartsTableSearchBar;
+        private System.Windows.Forms.TextBox AssociatedPartsSearchBar;
+        private System.Windows.Forms.TextBox CandidateTableSearchBar;
         private System.Windows.Forms.Label BottomTableLabel;
         private System.Windows.Forms.Label TopTableLabel;
-        private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
-        private System.Windows.Forms.ColumnHeader columnHeader3;
-        private System.Windows.Forms.ColumnHeader columnHeader4;
-        private System.Windows.Forms.ColumnHeader columnHeader5;
-        private System.Windows.Forms.ColumnHeader columnHeader6;
-        private System.Windows.Forms.ListView PartsTable;
-        private System.Windows.Forms.ColumnHeader PartID;
-        private System.Windows.Forms.ColumnHeader PartName;
-        private System.Windows.Forms.ColumnHeader PartInventory;
-        private System.Windows.Forms.ColumnHeader PartPrice;
-        private System.Windows.Forms.ColumnHeader PartMin;
-        private System.Windows.Forms.ColumnHeader PartMax;
+        private System.Windows.Forms.ListView AssociatedTable;
+        private System.Windows.Forms.ColumnHeader BottomID;
+        private System.Windows.Forms.ColumnHeader BottomName;
+        private System.Windows.Forms.ColumnHeader BottomInventory;
+        private System.Windows.Forms.ColumnHeader BottomPrice;
+        private System.Windows.Forms.ColumnHeader BottomMin;
+        private System.Windows.Forms.ColumnHeader BottomMax;
+        private System.Windows.Forms.ListView CandidateTable;
+        private System.Windows.Forms.ColumnHeader TopID;
+        private System.Windows.Forms.ColumnHeader TopName;
+        private System.Windows.Forms.ColumnHeader TopInventory;
+        private System.Windows.Forms.ColumnHeader TopPrice;
+        private System.Windows.Forms.ColumnHeader TopMin;
+        private System.Windows.Forms.ColumnHeader TopMax;
         private System.Windows.Forms.Label WindowLabel;
     }
 }

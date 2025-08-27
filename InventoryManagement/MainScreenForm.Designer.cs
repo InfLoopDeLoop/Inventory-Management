@@ -204,6 +204,7 @@ namespace InventoryManagement
             this.ProductMin,
             this.ProductMax});
             this.ProductsTable.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProductsTable.FullRowSelect = true;
             this.ProductsTable.HideSelection = false;
             this.ProductsTable.Location = new System.Drawing.Point(504, 120);
             this.ProductsTable.Name = "ProductsTable";

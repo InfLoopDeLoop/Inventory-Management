@@ -42,12 +42,12 @@
             this.BottomName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.BottomInventory = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.BottomPrice = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.BottomMax = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.BottomMin = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.BottomMax = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.TopTableLabel = new System.Windows.Forms.Label();
             this.BottomTableLabel = new System.Windows.Forms.Label();
-            this.CandidatePartsTableSearchBar = new System.Windows.Forms.TextBox();
-            this.AssociatedPartsTableSearchBar = new System.Windows.Forms.TextBox();
+            this.CandidateTableSearchBar = new System.Windows.Forms.TextBox();
+            this.AssociatedTableSearchBar = new System.Windows.Forms.TextBox();
             this.IDTextBox = new System.Windows.Forms.TextBox();
             this.NameTextBox = new System.Windows.Forms.TextBox();
             this.InventoryTextBox = new System.Windows.Forms.TextBox();
@@ -63,7 +63,7 @@
             this.AddPartButtton = new System.Windows.Forms.Button();
             this.CancelButton = new System.Windows.Forms.Button();
             this.SaveButton = new System.Windows.Forms.Button();
-            this.DeleteButton = new System.Windows.Forms.Button();
+            this.DeletePartButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // WindowLabel
@@ -200,21 +200,21 @@
             this.BottomTableLabel.TabIndex = 17;
             this.BottomTableLabel.Text = "Associated Parts";
             // 
-            // CandidatePartsTableSearchBar
+            // CandidateTableSearchBar
             // 
-            this.CandidatePartsTableSearchBar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.CandidatePartsTableSearchBar.Location = new System.Drawing.Point(632, 12);
-            this.CandidatePartsTableSearchBar.Name = "CandidatePartsTableSearchBar";
-            this.CandidatePartsTableSearchBar.Size = new System.Drawing.Size(156, 20);
-            this.CandidatePartsTableSearchBar.TabIndex = 18;
+            this.CandidateTableSearchBar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.CandidateTableSearchBar.Location = new System.Drawing.Point(632, 12);
+            this.CandidateTableSearchBar.Name = "CandidateTableSearchBar";
+            this.CandidateTableSearchBar.Size = new System.Drawing.Size(156, 20);
+            this.CandidateTableSearchBar.TabIndex = 18;
             // 
-            // AssociatedPartsTableSearchBar
+            // AssociatedTableSearchBar
             // 
-            this.AssociatedPartsTableSearchBar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.AssociatedPartsTableSearchBar.Location = new System.Drawing.Point(632, 316);
-            this.AssociatedPartsTableSearchBar.Name = "AssociatedPartsTableSearchBar";
-            this.AssociatedPartsTableSearchBar.Size = new System.Drawing.Size(156, 20);
-            this.AssociatedPartsTableSearchBar.TabIndex = 19;
+            this.AssociatedTableSearchBar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.AssociatedTableSearchBar.Location = new System.Drawing.Point(632, 316);
+            this.AssociatedTableSearchBar.Name = "AssociatedTableSearchBar";
+            this.AssociatedTableSearchBar.Size = new System.Drawing.Size(156, 20);
+            this.AssociatedTableSearchBar.TabIndex = 19;
             // 
             // IDTextBox
             // 
@@ -360,24 +360,24 @@
             this.SaveButton.UseVisualStyleBackColor = true;
             this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
             // 
-            // DeleteButton
+            // DeletePartButton
             // 
-            this.DeleteButton.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.DeleteButton.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DeleteButton.Location = new System.Drawing.Point(713, 588);
-            this.DeleteButton.Name = "DeleteButton";
-            this.DeleteButton.Size = new System.Drawing.Size(75, 23);
-            this.DeleteButton.TabIndex = 35;
-            this.DeleteButton.Text = "Delete";
-            this.DeleteButton.UseVisualStyleBackColor = true;
-            this.DeleteButton.Click += new System.EventHandler(this.DeletePartButton_Click);
+            this.DeletePartButton.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.DeletePartButton.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DeletePartButton.Location = new System.Drawing.Point(713, 588);
+            this.DeletePartButton.Name = "DeletePartButton";
+            this.DeletePartButton.Size = new System.Drawing.Size(75, 23);
+            this.DeletePartButton.TabIndex = 35;
+            this.DeletePartButton.Text = "Delete";
+            this.DeletePartButton.UseVisualStyleBackColor = true;
+            this.DeletePartButton.Click += new System.EventHandler(this.DeletePartButton_Click);
             // 
             // AddProductForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 621);
-            this.Controls.Add(this.DeleteButton);
+            this.Controls.Add(this.DeletePartButton);
             this.Controls.Add(this.SaveButton);
             this.Controls.Add(this.CancelButton);
             this.Controls.Add(this.AddPartButtton);
@@ -393,8 +393,8 @@
             this.Controls.Add(this.InventoryTextBox);
             this.Controls.Add(this.NameTextBox);
             this.Controls.Add(this.IDTextBox);
-            this.Controls.Add(this.AssociatedPartsTableSearchBar);
-            this.Controls.Add(this.CandidatePartsTableSearchBar);
+            this.Controls.Add(this.AssociatedTableSearchBar);
+            this.Controls.Add(this.CandidateTableSearchBar);
             this.Controls.Add(this.BottomTableLabel);
             this.Controls.Add(this.TopTableLabel);
             this.Controls.Add(this.AssociatedTable);
@@ -428,8 +428,8 @@
         private System.Windows.Forms.ColumnHeader BottomMax;
         private System.Windows.Forms.Label TopTableLabel;
         private System.Windows.Forms.Label BottomTableLabel;
-        private System.Windows.Forms.TextBox CandidatePartsTableSearchBar;
-        private System.Windows.Forms.TextBox AssociatedPartsTableSearchBar;
+        private System.Windows.Forms.TextBox CandidateTableSearchBar;
+        private System.Windows.Forms.TextBox AssociatedTableSearchBar;
         private System.Windows.Forms.TextBox IDTextBox;
         private System.Windows.Forms.TextBox NameTextBox;
         private System.Windows.Forms.TextBox InventoryTextBox;
@@ -445,6 +445,6 @@
         private System.Windows.Forms.Button AddPartButtton;
         private System.Windows.Forms.Button CancelButton;
         private System.Windows.Forms.Button SaveButton;
-        private System.Windows.Forms.Button DeleteButton;
+        private System.Windows.Forms.Button DeletePartButton;
     }
 }
