@@ -154,7 +154,22 @@ namespace InventoryManagement
 
         private void DeleteProductButton_Click(object sender, EventArgs e)
         {
+            if (ProductsTable.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("Please select a product to delete.");
+                return;
+            }
 
+            if (MessageBox.Show("Are you sure you want to delete this product?",
+                "Confirm Delete", MessageBoxButtons.YesNo) != DialogResult.Yes)
+            {
+                return;
+            }
+
+            ListViewItem selectedRow = ProductsTable.SelectedItems[0];
+            int productID = int.Parse(selectedRow.SubItems[0].Text);
+            Inventory.DeleteProduct(productID);
+            RefreshProductsView();
         }
 
         private void PoductsTableSearchBar_TextChanged(object sender, EventArgs e)

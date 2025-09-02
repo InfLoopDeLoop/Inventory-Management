@@ -44,6 +44,17 @@ namespace InventoryManagement.Models
 
         public static bool DeletePart(Part part)
         {
+            foreach (var product in Products)
+            {
+                foreach (var associatedPart in product.AssociatedParts)
+                {
+                    if (associatedPart.PartID == part.PartID)
+                    {
+                        return false;
+                    }
+                }
+            }
+
             return AllParts.Remove(part);
         }
 
