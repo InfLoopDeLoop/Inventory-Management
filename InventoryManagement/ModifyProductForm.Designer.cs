@@ -45,7 +45,7 @@
             this.InventoryTextBox = new System.Windows.Forms.TextBox();
             this.NameTextBox = new System.Windows.Forms.TextBox();
             this.IDTextBox = new System.Windows.Forms.TextBox();
-            this.AssociatedPartsSearchBar = new System.Windows.Forms.TextBox();
+            this.AssociatedTableSearchBar = new System.Windows.Forms.TextBox();
             this.CandidateTableSearchBar = new System.Windows.Forms.TextBox();
             this.BottomTableLabel = new System.Windows.Forms.Label();
             this.TopTableLabel = new System.Windows.Forms.Label();
@@ -222,13 +222,14 @@
             this.IDTextBox.Size = new System.Drawing.Size(156, 20);
             this.IDTextBox.TabIndex = 43;
             // 
-            // AssociatedPartsSearchBar
+            // AssociatedTableSearchBar
             // 
-            this.AssociatedPartsSearchBar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.AssociatedPartsSearchBar.Location = new System.Drawing.Point(632, 316);
-            this.AssociatedPartsSearchBar.Name = "AssociatedPartsSearchBar";
-            this.AssociatedPartsSearchBar.Size = new System.Drawing.Size(156, 20);
-            this.AssociatedPartsSearchBar.TabIndex = 42;
+            this.AssociatedTableSearchBar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.AssociatedTableSearchBar.Location = new System.Drawing.Point(632, 316);
+            this.AssociatedTableSearchBar.Name = "AssociatedTableSearchBar";
+            this.AssociatedTableSearchBar.Size = new System.Drawing.Size(156, 20);
+            this.AssociatedTableSearchBar.TabIndex = 42;
+            this.AssociatedTableSearchBar.TextChanged += new System.EventHandler(this.AssociatedPartsSearchBar_TextChanged);
             // 
             // CandidateTableSearchBar
             // 
@@ -237,6 +238,7 @@
             this.CandidateTableSearchBar.Name = "CandidateTableSearchBar";
             this.CandidateTableSearchBar.Size = new System.Drawing.Size(156, 20);
             this.CandidateTableSearchBar.TabIndex = 41;
+            this.CandidateTableSearchBar.TextChanged += new System.EventHandler(this.CandidateTableSearchBar_TextChanged);
             // 
             // BottomTableLabel
             // 
@@ -393,7 +395,7 @@
             this.Controls.Add(this.InventoryTextBox);
             this.Controls.Add(this.NameTextBox);
             this.Controls.Add(this.IDTextBox);
-            this.Controls.Add(this.AssociatedPartsSearchBar);
+            this.Controls.Add(this.AssociatedTableSearchBar);
             this.Controls.Add(this.CandidateTableSearchBar);
             this.Controls.Add(this.BottomTableLabel);
             this.Controls.Add(this.TopTableLabel);
@@ -427,7 +429,7 @@
         private System.Windows.Forms.TextBox InventoryTextBox;
         private System.Windows.Forms.TextBox NameTextBox;
         private System.Windows.Forms.TextBox IDTextBox;
-        private System.Windows.Forms.TextBox AssociatedPartsSearchBar;
+        private System.Windows.Forms.TextBox AssociatedTableSearchBar;
         private System.Windows.Forms.TextBox CandidateTableSearchBar;
         private System.Windows.Forms.Label BottomTableLabel;
         private System.Windows.Forms.Label TopTableLabel;

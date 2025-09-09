@@ -174,7 +174,24 @@ namespace InventoryManagement
 
         private void PoductsTableSearchBar_TextChanged(object sender, EventArgs e)
         {
-
+            if (string.IsNullOrWhiteSpace(ProductsTableSearchBar.Text))
+            {
+                RefreshProductsView();
+                return;
+            }
+            string searchTerm = ProductsTableSearchBar.Text.ToLower();
+            var filteredProducts = Inventory.Products.Where(p => p.Name.ToLower().Contains(searchTerm)).ToList();
+            ProductsTable.Items.Clear();
+            foreach (var product in filteredProducts)
+            {
+                ListViewItem item = new ListViewItem(product.ProductID.ToString());
+                item.SubItems.Add(product.Name);
+                item.SubItems.Add(product.InStock.ToString());
+                item.SubItems.Add(product.Price.ToString("C"));
+                item.SubItems.Add(product.Min.ToString());
+                item.SubItems.Add(product.Max.ToString());
+                ProductsTable.Items.Add(item);
+            }
         }
 
         private void ExitButton_Click(object sender, EventArgs e)

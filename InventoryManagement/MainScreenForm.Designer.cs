@@ -56,7 +56,7 @@ namespace InventoryManagement
             this.RightTableLabel = new System.Windows.Forms.Label();
             this.ExitButton = new System.Windows.Forms.Button();
             this.PartsTableSearchBar = new System.Windows.Forms.TextBox();
-            this.PoductsTableSearchBar = new System.Windows.Forms.TextBox();
+            this.ProductsTableSearchBar = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // WindowLabel
@@ -286,21 +286,21 @@ namespace InventoryManagement
             this.PartsTableSearchBar.TabIndex = 13;
             this.PartsTableSearchBar.TextChanged += new System.EventHandler(this.PartsTableSearchBar_TextChanged);
             // 
-            // PoductsTableSearchBar
+            // ProductsTableSearchBar
             // 
-            this.PoductsTableSearchBar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.PoductsTableSearchBar.Location = new System.Drawing.Point(828, 94);
-            this.PoductsTableSearchBar.Name = "PoductsTableSearchBar";
-            this.PoductsTableSearchBar.Size = new System.Drawing.Size(156, 20);
-            this.PoductsTableSearchBar.TabIndex = 14;
-            this.PoductsTableSearchBar.TextChanged += new System.EventHandler(this.PoductsTableSearchBar_TextChanged);
+            this.ProductsTableSearchBar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ProductsTableSearchBar.Location = new System.Drawing.Point(828, 94);
+            this.ProductsTableSearchBar.Name = "ProductsTableSearchBar";
+            this.ProductsTableSearchBar.Size = new System.Drawing.Size(156, 20);
+            this.ProductsTableSearchBar.TabIndex = 14;
+            this.ProductsTableSearchBar.TextChanged += new System.EventHandler(this.PoductsTableSearchBar_TextChanged);
             // 
             // MainScreenForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(996, 401);
-            this.Controls.Add(this.PoductsTableSearchBar);
+            this.Controls.Add(this.ProductsTableSearchBar);
             this.Controls.Add(this.PartsTableSearchBar);
             this.Controls.Add(this.ExitButton);
             this.Controls.Add(this.RightTableLabel);
@@ -336,7 +336,7 @@ namespace InventoryManagement
         private Label RightTableLabel;
         private Button ExitButton;
         private TextBox PartsTableSearchBar;
-        private TextBox PoductsTableSearchBar;
+        private TextBox ProductsTableSearchBar;
         private ColumnHeader PartID;
         private ColumnHeader PartName;
         private ColumnHeader PartInventory;

@@ -207,6 +207,7 @@
             this.CandidateTableSearchBar.Name = "CandidateTableSearchBar";
             this.CandidateTableSearchBar.Size = new System.Drawing.Size(156, 20);
             this.CandidateTableSearchBar.TabIndex = 18;
+            this.CandidateTableSearchBar.TextChanged += new System.EventHandler(this.CandidateTableSearchBar_TextChanged);
             // 
             // AssociatedTableSearchBar
             // 
@@ -215,6 +216,7 @@
             this.AssociatedTableSearchBar.Name = "AssociatedTableSearchBar";
             this.AssociatedTableSearchBar.Size = new System.Drawing.Size(156, 20);
             this.AssociatedTableSearchBar.TabIndex = 19;
+            this.AssociatedTableSearchBar.TextChanged += new System.EventHandler(this.AssociatedTableSearchBar_TextChanged);
             // 
             // IDTextBox
             // 

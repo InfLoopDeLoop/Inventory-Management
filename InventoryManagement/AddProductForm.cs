@@ -168,5 +168,50 @@ namespace InventoryManagement
         {
             this.Close();
         }
+
+        private void CandidateTableSearchBar_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(CandidateTableSearchBar.Text))
+            {
+                RefreshCandidateView();
+                return;
+            }
+            string searchTerm = CandidateTableSearchBar.Text.ToLower();
+            var filteredParts = CandidateParts.Where(p => p.Name.ToLower().Contains(searchTerm)).ToList();
+            CandidateTable.Items.Clear();
+            foreach (var part in filteredParts)
+            {
+                ListViewItem item = new ListViewItem(part.PartID.ToString());
+                item.SubItems.Add(part.Name);
+                item.SubItems.Add(part.InStock.ToString());
+                item.SubItems.Add(part.Price.ToString("C"));
+                item.SubItems.Add(part.Min.ToString());
+                item.SubItems.Add(part.Max.ToString());
+                CandidateTable.Items.Add(item);
+            }
+        }
+
+        private void AssociatedTableSearchBar_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(AssociatedTableSearchBar.Text))
+            {
+                RefreshAssociatedView();
+                return;
+            }
+            string searchTerm = AssociatedTableSearchBar.Text.ToLower();
+            var filteredParts = NewProduct.AssociatedParts.Where(p => p.Name.ToLower().Contains(searchTerm)).ToList();
+            AssociatedTable.Items.Clear();
+            foreach (var part in filteredParts)
+            {
+                ListViewItem item = new ListViewItem(part.PartID.ToString());
+                item.SubItems.Add(part.Name);
+                item.SubItems.Add(part.InStock.ToString());
+                item.SubItems.Add(part.Price.ToString("C"));
+                item.SubItems.Add(part.Min.ToString());
+                item.SubItems.Add(part.Max.ToString());
+                AssociatedTable.Items.Add(item);
+            }
+        }
     }
 }
+
